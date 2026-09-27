@@ -1,0 +1,16 @@
+{
+  "name": "Tengene Byggservice AB",
+  "short_name": "Tengene Bygg",
+  "description": "Professionellt byggföretag i Grästorp och Skaraborg. Nybyggnation, tillbyggnad, renovering, tak och altan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

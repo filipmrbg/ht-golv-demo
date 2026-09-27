@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tengenebyggservice.se/sitemap.xml
