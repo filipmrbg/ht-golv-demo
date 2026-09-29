@@ -85,6 +85,7 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
         }}
       >
         <source src="/cta-background-video.mp4" type="video/mp4" />
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260929_045335_f027d5e8-5d04-4a73-af89-b504e173516e.mp4" type="video/mp4" />
       </video>
 
       {/* Dark Premium Fading Overlay */}

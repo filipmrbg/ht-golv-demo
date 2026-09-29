@@ -9,7 +9,7 @@ export function usePageTitle(title: string, description?: string) {
     document.title = title;
 
     // 2. Update Description
-    const defaultDesc = "Tengene Byggservice AB utför professionella byggtjänster, renovering, tillbyggnad och totalentreprenad i Grästorp och Skaraborg.";
+    const defaultDesc = "HT Golv i Stenungsund AB är ett familjeföretag i 3 generationer. Vi utför professionell golvläggning, mattläggning, parkett och fastighetsförvaltning i Stenungsund med omnejd.";
     const activeDesc = description || defaultDesc;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -39,7 +39,7 @@ export function usePageTitle(title: string, description?: string) {
     // 5. Update Canonical Link & Absolute URL
     const origin = typeof window !== 'undefined' && window.location.origin.startsWith('http')
       ? window.location.origin
-      : 'https://tengene-byggservice-ab.vercel.app';
+      : 'https://ht-golv-demo.vercel.app';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
     const ogImageUrl = `${origin}/og-image.png`;
 

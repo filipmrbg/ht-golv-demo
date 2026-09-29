@@ -64,94 +64,86 @@ export interface SiteImages {
 const images: SiteImages = {
   logo: {
     url: '/logo.png',
-    alt: 'Tengene Byggservice AB',
+    alt: 'HT Golv i Stenungsund AB',
   },
   logoDark: {
     url: '/logo-dark.png',
-    alt: 'Tengene Byggservice AB',
+    alt: 'HT Golv i Stenungsund AB',
   },
   ogImage: {
     url: '/og-image.png',
-    alt: 'Tengene Byggservice AB Logotyp',
+    alt: 'HT Golv i Stenungsund AB Logotyp',
   },
 
   hero: {
     background: {
       url: '/hero-main.webp',
-      alt: 'Tengene Byggservice AB hantverk och byggverksamhet i Grästorp och Skaraborg',
+      alt: 'HT Golv i Stenungsund AB professionell golvläggning och mattläggning i Stenungsund',
     },
-    videoUrl: 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260919_153039_cce52f57-f8cb-482d-b79e-29c767cfbbee.mp4',
+    videoUrl: '/hero-video.mp4',
   },
 
   services: {
     nybyggnation: {
       url: '/service-smahusbyggnation.webp',
-      alt: 'Nybyggnation, garage och attefallshus i Grästorp och Skaraborg',
+      alt: 'Golvläggning av trä- och parkettgolv i Stenungsund',
     },
     smahusbyggnation: {
       url: '/service-smahusbyggnation.webp',
-      alt: 'Småhusbyggnation och attefallshus i Skaraborg',
+      alt: 'Golvläggning och parkett i Stenungsund med omnejd',
     },
     renovering: {
       url: '/service-renovering.webp',
-      alt: 'Totalrenovering, kök och badrum i Grästorp med omnejd',
+      alt: 'Mattläggning av plastmatta, linoleum och våtrumsmattor',
     },
     ombyggnation: {
       url: '/service-ombyggnation.webp',
-      alt: 'Ombyggnation, tak och tillbyggnad i Skaraborg',
+      alt: 'Golvslipning och ytbehandling i Stenungsund',
     },
     totalentreprenad: {
       url: '/service-totalentreprenad.webp',
-      alt: 'Totalentreprenad med trygghet och kvalitet i Grästorp',
+      alt: 'Fastighetsförvaltning och golventreprenad i Stenungsund',
     },
   },
 
   gallery: [
     {
-      url: '/gallery/gallery-1.jpg',
-      alt: 'Tengene Byggservice AB bygg och snickeriarbete',
+      url: '/gallery/gallery-1.mp4',
+      alt: 'Mattläggning och svetsning av plastmatta och vinylgolv',
     },
     {
-      url: '/gallery/gallery-2.jpg',
-      alt: 'Tengene Byggservice AB renovering och interiör',
+      url: '/gallery/gallery-2.mp4',
+      alt: 'Schackmönstrad golvbeläggning i offentlig lokal',
     },
     {
-      url: '/gallery/gallery-3.jpg',
-      alt: 'Tengene Byggservice AB badrum och våtrum',
+      url: '/gallery/gallery-3.mp4',
+      alt: 'Golvavjämning, primning och flytspackling',
     },
     {
       url: '/gallery/gallery-4.jpg',
-      alt: 'Tengene Byggservice AB altan och utemiljö',
-    },
-    {
-      url: '/gallery/gallery-5.jpg',
-      alt: 'Tengene Byggservice AB tak och fasad',
-    },
-    {
-      url: '/gallery/gallery-6.jpg',
-      alt: 'Tengene Byggservice AB färdigställt byggprojekt',
+      alt: 'Läggning av trägolv och parkett i bostad',
     },
   ],
 
   cta: {
     banner: {
       url: '/hero-main.webp',
-      alt: 'Tengene Byggservice AB projekt',
+      alt: 'HT Golv i Stenungsund AB hantverk',
     },
     midSection: {
       url: '/hero-main.webp',
-      alt: 'Tengene Byggservice AB arbetsplats Grästorp',
+      alt: 'HT Golv i Stenungsund AB golvarbete',
     },
   },
 
   about: {
     hero: {
-      url: '/about-us.jpg',
-      alt: 'Tengene Byggservice AB grundare och verksamhet',
+      url: '/about.webp',
+      alt: 'HT Golv i Stenungsund AB hantverkare lägger trägolv',
     },
     teamMember: {
       url: '/logo.png',
-      alt: 'Teammedlem Tengene Byggservice AB',
+      alt: 'HT Golv i Stenungsund AB',
     },
   },
 
@@ -168,51 +160,35 @@ const images: SiteImages = {
   portfolio: [
     {
       image: {
-        url: '/gallery/gallery-1.jpg',
-        alt: 'Totalrenovering villa i Grästorp',
+        url: '/gallery/gallery-1.mp4',
+        alt: 'Mattläggning och svetsning av plastmatta',
       },
-      title: 'Totalrenovering Villa',
-      category: 'Totalentreprenad',
+      title: 'Mattläggning & Svetsning',
+      category: 'Mattläggning',
     },
     {
       image: {
-        url: '/gallery/gallery-2.jpg',
-        alt: 'Kök och interiörrenovering',
+        url: '/gallery/gallery-2.mp4',
+        alt: 'Schackmönstrad golvbeläggning i offentlig lokal',
       },
-      title: 'Kök & Interiör',
-      category: 'Renovering',
+      title: 'Offentlig Miljö & Lokal',
+      category: 'Golvbeläggning',
     },
     {
       image: {
-        url: '/gallery/gallery-3.jpg',
-        alt: 'Badrumsrenovering och plattsättning',
+        url: '/gallery/gallery-3.mp4',
+        alt: 'Golvavjämning och flytspackling',
       },
-      title: 'Badrum & Våtrum',
-      category: 'Renovering',
+      title: 'Underarbete & Golvavjämning',
+      category: 'Golvavjämning',
     },
     {
       image: {
         url: '/gallery/gallery-4.jpg',
-        alt: 'Altanbygge och trädäck i Grästorp',
+        alt: 'Läggning av parkett och trägolv',
       },
-      title: 'Altan & Utemiljö',
-      category: 'Tillbyggnad',
-    },
-    {
-      image: {
-        url: '/gallery/gallery-5.jpg',
-        alt: 'Tak och fasadarbete Skaraborg',
-      },
-      title: 'Tak & Fasad',
-      category: 'Renovering',
-    },
-    {
-      image: {
-        url: '/gallery/gallery-6.jpg',
-        alt: 'Nybyggnation och stomresning',
-      },
-      title: 'Nybyggnation & Stomresning',
-      category: 'Nybyggnation',
+      title: 'Trä- & Parkettläggning',
+      category: 'Golvläggning',
     },
   ],
 

@@ -261,3 +261,88 @@ body {
 .service-card-el:hover .service-card-arrow {
   transform: translateX(6px);
 }
+
+/* ==========================================================================
+   NYBE AB Motion Effects (Bottom-to-Top Mask Reveal & Floating)
+   ========================================================================== */
+@keyframes nybeRevealIn {
+  0% {
+    opacity: 0;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    transform: translateY(22px) scale(0.92);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modern-service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 28px 28px 28px;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modern-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.09);
+  border-color: rgba(234, 88, 12, 0.35);
+}
+
+.modern-service-card .service-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-primary);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modern-service-card:hover .service-icon-box {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.modern-service-card .service-card-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.modern-service-card:hover .service-card-number {
+  color: var(--color-primary);
+}
+
+.modern-service-card .service-card-readmore {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+  transition: gap 0.25s ease;
+}
+
+.modern-service-card:hover .service-card-readmore {
+  gap: 10px;
+}

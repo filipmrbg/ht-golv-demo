@@ -51,8 +51,8 @@ const homeFaqItems = [
 
 export default function Home() {
   usePageTitle(
-    'Tengene Byggservice AB | Bygg & Renovering i Grästorp & Skaraborg',
-    'Tengene Byggservice AB utför professionella byggtjänster, renovering, tillbyggnad och totalentreprenad i Grästorp och Skaraborg. Kontakta Andreas för fri offert!'
+    'HT Golv i Stenungsund AB | Matt & Golvläggning i Stenungsund',
+    'HT Golv i Stenungsund AB är ett familjeföretag i 3 generationer specialiserat på golvläggning, mattläggning, golvslipning och fastighetsförvaltning i Stenungsund med omnejd. Kontakta oss för fri offert!'
   );
 
   const heroBgRef = useRef<HTMLDivElement>(null);
@@ -145,7 +145,7 @@ export default function Home() {
         >
           <video
             ref={heroVideoRef}
-            src={images.hero.videoUrl || "https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260919_153039_cce52f57-f8cb-482d-b79e-29c767cfbbee.mp4"}
+            src={images.hero.videoUrl || "/hero-video.mp4"}
             preload="auto"
             autoPlay
             loop
@@ -158,7 +158,8 @@ export default function Home() {
               objectPosition: 'center',
             }}
           >
-            <source src={images.hero.videoUrl || "https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260919_153039_cce52f57-f8cb-482d-b79e-29c767cfbbee.mp4"} type="video/mp4" />
+            <source src={images.hero.videoUrl || "/hero-video.mp4"} type="video/mp4" />
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260929_045500_5bc8a3c3-d4c4-450f-8568-4cf65e18d3da.mp4" type="video/mp4" />
           </video>
         </div>
         {/* Dark overlay */}
@@ -175,7 +176,7 @@ export default function Home() {
             flexDirection: 'column',
             alignItems: 'flex-start',
             textAlign: 'left',
-            maxWidth: '720px',
+            maxWidth: '880px',
             margin: '0',
             paddingTop: '60px',
             paddingBottom: '40px',
@@ -192,7 +193,7 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                GRÄSTORP • TROLLHÄTTAN • LIDKÖPING • VARA • SKARABORG
+                STENUNGSUND • TJÖRN • ORUST • KUNGÄLV • BOHUSLÄN
               </span>
             </ScrollReveal>
 
@@ -201,15 +202,17 @@ export default function Home() {
               <h1 style={{
                 fontFamily: "'Outfit', sans-serif",
                 color: '#ffffff',
-                fontSize: 'clamp(2.8rem, 6.5vw, 5.2rem)',
+                fontSize: 'clamp(2.3rem, 5vw, 4.4rem)',
                 fontWeight: 900,
-                lineHeight: 0.98,
+                lineHeight: 1.05,
                 textTransform: 'uppercase',
-                letterSpacing: '-0.01em',
+                letterSpacing: '-0.015em',
                 margin: '0 0 24px 0',
                 textShadow: '0 4px 18px rgba(0, 0, 0, 0.75)',
+                textWrap: 'balance',
               }}>
-                TENGENE BYGGSERVICE AB
+                HT GOLV <br />
+                <span>I STENUNGSUND&nbsp;AB</span>
               </h1>
             </ScrollReveal>
 
@@ -225,7 +228,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Professionell byggverksamhet, renovering och tillbyggnad i Grästorp och Skaraborg. Gediget hantverk och trygga helhetslösningar anpassade efter dina behov.
+                Familjeföretag i 3 generationer med gedigen expertis inom golvläggning, mattläggning, golvslipning och fastighetsförvaltning i Stenungsund och Bohuslän. Kvalitetsarbete och trygga helhetslösningar anpassade efter dina behov.
               </p>
             </ScrollReveal>
 
@@ -244,11 +247,11 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  href="tel:0706159173"
+                  href="tel:0761653060"
                 >
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     <Phone size={18} />
-                    Ring 070-615 91 73
+                    Ring 0761-65 30 60
                   </span>
                 </Button>
               </div>
@@ -297,7 +300,7 @@ export default function Home() {
                   margin: 0,
                   lineHeight: 1.18,
                 }}>
-                  Byggtjänster med fokus på kvalitet
+                  Golvtjänster & förvaltning med fokus på kvalitet
                 </h2>
               </ScrollReveal>
             </div>
@@ -310,7 +313,7 @@ export default function Home() {
                   lineHeight: 1.65,
                   margin: '0 0 12px 0',
                 }}>
-                  Från byggnation och renovering till tillbyggnad, altaner och totalentreprenad i Grästorp och Skaraborg.
+                  Från professionell golvläggning och mattläggning till dammfri golvslipning och pålitlig fastighetsförvaltning i Stenungsund med omnejd.
                 </p>
                 <Link
                   to="/tjanster"
@@ -330,120 +333,47 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Clean Modern Photo Grid - 4 Services with Icons */}
+          {/* Clean Modern Service Cards Grid - NYBE AB inspired icon-driven layout */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '24px',
           }}>
             {services.map((svc: ServiceItem, index: number) => (
-              <ScrollReveal key={svc.slug} animation="fade-up" delay={index * 80}>
+              <ScrollReveal key={svc.slug} animation="fade-up" delay={index * 100} duration={0.7}>
                 <Link
                   to={svc.href}
-                  className="modern-photo-card"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    background: '#ffffff',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    textDecoration: 'none',
-                    border: '1px solid #e2e8f0',
-                    boxShadow: '0 4px 20px rgba(15, 23, 42, 0.05)',
-                    transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                    height: '100%',
-                  }}
-                  onMouseEnter={(e) => {
-                    const card = e.currentTarget;
-                    card.style.transform = 'translateY(-6px)';
-                    card.style.boxShadow = '0 20px 40px rgba(15, 23, 42, 0.12)';
-                    card.style.borderColor = 'rgba(234, 88, 12, 0.3)';
-                    const img = card.querySelector('.card-photo') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const card = e.currentTarget;
-                    card.style.transform = 'translateY(0)';
-                    card.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.05)';
-                    card.style.borderColor = '#e2e8f0';
-                    const img = card.querySelector('.card-photo') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1)';
-                  }}
+                  className="modern-service-card"
                 >
-                  {/* Photo Container */}
-                  <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '190px',
-                    overflow: 'hidden',
-                    background: '#0f172a',
-                  }}>
-                    <img
-                      src={svc.image}
-                      alt={svc.title}
-                      loading="lazy"
-                      className="card-photo"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                        transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                      }}
-                    />
-                    <div style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.6) 100%)',
-                      pointerEvents: 'none',
-                    }} />
+                  {/* Clean Icon (no square box, no 01-04 numbers) */}
+                  <div className="service-icon-box" style={{ marginBottom: '20px' }}>
+                    <ServiceIcon type={svc.slug} color="var(--color-primary)" size={42} />
                   </div>
 
-                  {/* Content Container */}
-                  <div style={{
-                    padding: '24px',
-                    display: 'flex',
-                    flexDirection: 'column',
+                  <h3 style={{
+                    color: 'var(--color-text-dark)',
+                    fontWeight: 800,
+                    fontSize: '1.16rem',
+                    margin: '0 0 12px 0',
+                    letterSpacing: '-0.015em',
+                    lineHeight: 1.25,
+                    textTransform: 'uppercase',
+                  }}>
+                    {svc.title}
+                  </h3>
+
+                  <p style={{
+                    color: 'var(--color-gray-600)',
+                    fontSize: '0.94rem',
+                    lineHeight: 1.65,
+                    margin: '0 0 24px 0',
                     flex: 1,
                   }}>
-                    {/* Architectural Service Icon */}
-                    <div style={{ marginBottom: '16px' }}>
-                      <ServiceIcon type={svc.slug} color="#c28447" size={38} />
-                    </div>
+                    {svc.shortDescription}
+                  </p>
 
-                    <h3 style={{
-                      color: 'var(--color-text-dark)',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      margin: '0 0 10px 0',
-                      letterSpacing: '-0.015em',
-                      lineHeight: 1.25,
-                    }}>
-                      {svc.title}
-                    </h3>
-                    <p style={{
-                      color: 'var(--color-gray-600)',
-                      fontSize: '0.92rem',
-                      lineHeight: 1.6,
-                      margin: '0 0 20px 0',
-                      flex: 1,
-                    }}>
-                      {svc.shortDescription}
-                    </p>
-
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      color: 'var(--color-primary)',
-                      fontWeight: 700,
-                      fontSize: '0.9rem',
-                      marginTop: 'auto',
-                      paddingTop: '14px',
-                      borderTop: '1px solid #f1f5f9',
-                    }}>
-                      Läs mer <ArrowRight size={15} />
-                    </div>
+                  <div className="service-card-readmore">
+                    Läs mer <ArrowRight size={15} />
                   </div>
                 </Link>
               </ScrollReveal>
@@ -490,7 +420,7 @@ export default function Home() {
               }}>
                 <img
                   src={images.about.hero.url}
-                  alt="Tengene Byggservice AB"
+                  alt="HT Golv i Stenungsund AB"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -513,7 +443,7 @@ export default function Home() {
                   lineHeight: 1.2,
                   margin: '0 0 14px 0',
                 }}>
-                  Din lokala byggpartner i Grästorp & Skaraborg
+                  Din lokala golvexpert i Stenungsund & Bohuslän
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
@@ -526,16 +456,16 @@ export default function Home() {
                   lineHeight: 1.75,
                   margin: '0 0 32px 0',
                 }}>
-                  Bakom Tengene Byggservice AB står Andreas Andersson. Med bas i Grästorp utför vi allt inom byggverksamhet, renovering, tillbyggnad, altaner och totalentreprenad i hela Skaraborg. Vi kombinerar gedigen hantverkskunskap med personlig service och noggrann planering – så att ditt byggprojekt blir tryggt och lyckat från start till mål.
+                  Bakom HT Golv i Stenungsund AB står Tim med familj. Som ett stolt familjeföretag i tre generationer utför vi allt inom golvläggning, mattläggning, trägolv, golvslipning samt fastighetsförvaltning i Stenungsund, Tjörn, Orust och Kungälv. Vi kombinerar mångårig hantverkskunskap med personlig service och noggrannhet – så att dina golv blir vackra och slitstarka från grunden.
                 </p>
               </ScrollReveal>
               <ScrollReveal animation="fade-right" duration={0.8} delay={200}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
-                    'En och samma kontaktperson – Andreas Andersson från start till mål',
+                    'Familjeföretag i 3 generationer med personligt engagemang',
                     'Tydliga offerter, fasta priser och direkt ROT-avdrag (30%)',
-                    'Totalentreprenad med trygghet och fullt ansvar',
-                    'Lokal närvaro och snabb service i Grästorp & Skaraborg',
+                    'Behöriga golvläggare för alla typer av mattor och trägolv',
+                    'Lokal närvaro och snabb service i Stenungsund & Bohuslän',
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />
@@ -637,8 +567,8 @@ export default function Home() {
               },
               {
                 icon: Hammer,
-                title: '3. Vi bygger',
-                desc: 'Vi utför arbetet enligt överenskommelse med hög kvalitet, full insyn och trygga garantier.',
+                title: '3. Vi utför arbetet',
+                desc: 'Vi utför arbetet enligt överenskommelse med högsta precision, full insyn och trygga garantier.',
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <div key={i} style={{ display: 'contents' }}>
@@ -795,7 +725,7 @@ export default function Home() {
                       <Star key={i} size={15} fill="#FBBC05" color="#FBBC05" />
                     ))}
                   </div>
-                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(Omdömen i Skaraborg)</span>
+                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(Omdömen i Bohuslän & Stenungsund)</span>
                 </div>
               </ScrollReveal>
             </div>
@@ -805,8 +735,8 @@ export default function Home() {
             {[
               {
                 name: 'Johan E.',
-                location: 'Grästorp',
-                text: 'Vi anlitade Tengene Byggservice AB för en omfattande renovering av vår villa. Otroligt proffsigt bemötande från Andreas från första mötet till slutbesiktning. Allt flöt på enligt tidsplanen och finishen är helt i toppklass. Rekommenderas varmt!',
+                location: 'Stenungsund',
+                text: 'Vi anlitade HT Golv för att lägga nya trägolv samt slipa och behandla parketten i vardagsrummet. Otroligt proffsigt bemötande från Tim från första mötet till färdigt resultat. Allt flöt på enligt tidsplanen och finishen är helt i toppklass. Rekommenderas varmt!',
                 stars: 5,
                 date: 'för 2 veckor sedan',
                 authorSub: 'Lokal boende • 14 omdömen',
@@ -814,17 +744,17 @@ export default function Home() {
               },
               {
                 name: 'Karin & Markus L.',
-                location: 'Trollhättan',
-                text: 'Andreas och hans team byggde vår nya altan och ett inglasat uterum. Mycket skickliga hantverkare som höll rent och snyggt under hela arbetet. Snabb återkoppling och tydlig offert utan dolda kostnader.',
+                location: 'Tjörn',
+                text: 'Tim och HT Golv hjälpte oss med mattläggning och golvrenovering i hela huset. Mycket skickliga hantverkare som höll rent och snyggt under hela arbetet. Snabb återkoppling och tydlig offert utan dolda kostnader.',
                 stars: 5,
                 date: 'för en månad sedan',
                 authorSub: '8 omdömen',
                 avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=120&h=120'
               },
               {
-                name: 'Erik S.',
-                location: 'Vara',
-                text: 'Trygg och pålitlig totalentreprenad när vi byggde till vårt garage och förråd. Andreas tog hand om alla kontakter och samordningen fungerade klockrent. Resultatet blev precis som vi hade tänkt oss!',
+                name: 'Anders B.',
+                location: 'Kungälv',
+                text: 'Trygg och pålitlig service när vi behövde åtgärda golv och underhåll i vår fastighet. HT Golv tog hand om allt och samordningen fungerade klockrent. Resultatet blev precis som vi hade tänkt oss!',
                 stars: 5,
                 date: 'för 2 månader sedan',
                 authorSub: 'Lokal guide • 21 omdömen',

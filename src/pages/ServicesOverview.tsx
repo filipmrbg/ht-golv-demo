@@ -5,6 +5,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import CTABanner from '../components/CTABanner';
 import { usePageTitle } from '../hooks/usePageTitle';
 import services, { ServiceItem } from '../data/services';
+import { ServiceIcon } from '../components/ServiceIcons';
 
 const container: React.CSSProperties = {
   maxWidth: 'var(--container-max)',
@@ -14,8 +15,8 @@ const container: React.CSSProperties = {
 
 export default function ServicesOverview() {
   usePageTitle(
-    'Våra Tjänster | Tengene Byggservice AB Grästorp',
-    'Utforska våra byggtjänster: Nybyggnation, tillbyggnad, renovering, tak, fasad och altaner i Grästorp och hela Skaraborg.'
+    'Våra Tjänster | HT Golv i Stenungsund AB',
+    'Utforska våra golvtjänster: Golvläggning, mattläggning, golvslipning och fastighetsförvaltning i Stenungsund och hela Bohuslän.'
   );
 
   const { hash } = useLocation();
@@ -83,7 +84,7 @@ export default function ServicesOverview() {
               margin: '0 auto',
               lineHeight: 1.65,
             }}>
-              Tengene Byggservice AB erbjuder gedigna hantverkstjänster, nybyggnation och renovering med hög kvalitet i Grästorp och Skaraborg.
+              HT Golv i Stenungsund AB erbjuder gedigna hantverkstjänster, golvläggning, golvslipning och fastighetsförvaltning med högsta kvalitet i Stenungsund och Bohuslän.
             </p>
           </ScrollReveal>
         </div>
@@ -118,13 +119,16 @@ export default function ServicesOverview() {
                   background: '#f1f5f9',
                   border: '1px solid #e2e8f0',
                   borderRadius: '20px',
-                  padding: '8px 20px',
+                  padding: '8px 18px',
                   fontSize: '0.92rem',
                   fontWeight: 600,
                   color: '#334155',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   fontFamily: 'var(--font-family)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'var(--color-primary)';
@@ -137,6 +141,7 @@ export default function ServicesOverview() {
                   e.currentTarget.style.borderColor = '#e2e8f0';
                 }}
               >
+                <ServiceIcon type={svc.slug} size={18} color="currentColor" />
                 {svc.title}
               </button>
             ))}
@@ -159,130 +164,103 @@ export default function ServicesOverview() {
                 borderBottom: '1px solid #e2e8f0',
               }}
             >
-              <div style={container}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: '50px',
-                  alignItems: 'center',
-                }}>
-
-                  {/* Image Column */}
-                  <div style={{ order: isEven ? 1 : 2 }}>
-                    <ScrollReveal animation={isEven ? 'fade-right' : 'fade-left'}>
-                      <div style={{
-                        position: 'relative',
-                        borderRadius: '24px',
-                        overflow: 'hidden',
-                        boxShadow: '0 20px 40px rgba(15, 23, 42, 0.12)',
-                        border: '3px solid #ffffff',
-                        aspectRatio: '4/3',
-                        background: '#0f172a',
-                      }}>
-                        <img
-                          src={svc.image}
-                          alt={svc.title}
-                          loading="eager"
-                          decoding="async"
-                          fetchPriority={index < 2 ? "high" : "auto"}
-                          style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            display: 'block',
-                          }}
-                        />
-                      </div>
+              <div style={{ ...container, maxWidth: '960px' }}>
+                <ScrollReveal animation="fade-up" duration={0.8}>
+                  {/* Top: Icon & Tag */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <ScrollReveal animation="nybe-reveal" duration={1.0}>
+                      <ServiceIcon type={svc.slug} size={36} color="var(--color-primary)" style={{ flexShrink: 0 }} />
                     </ScrollReveal>
+                    {svc.tag && (
+                      <span style={{
+                        color: 'var(--color-primary)',
+                        fontWeight: 700,
+                        fontSize: '0.85rem',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                      }}>
+                        {svc.tag}
+                      </span>
+                    )}
                   </div>
 
-                  {/* Content Column */}
-                  <div style={{ order: isEven ? 2 : 1 }}>
-                    <ScrollReveal animation={isEven ? 'fade-left' : 'fade-right'}>
-                      {svc.tag && (
-                        <span style={{
-                          color: 'var(--color-primary)',
-                          fontWeight: 700,
-                          fontSize: '0.85rem',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.08em',
-                          display: 'block',
-                          marginBottom: '8px',
-                        }}>
-                          {svc.tag}
-                        </span>
-                      )}
-                      <h2 style={{
-                        color: 'var(--color-text-dark)',
-                        fontWeight: 800,
-                        fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                        letterSpacing: '-0.03em',
-                        margin: '0 0 16px 0',
-                        lineHeight: 1.2,
-                      }}>
-                        {svc.title}
-                      </h2>
-                      <p style={{
-                        color: 'var(--color-gray-600)',
-                        fontSize: '1.02rem',
-                        lineHeight: 1.75,
-                        margin: '0 0 24px 0',
-                        whiteSpace: 'pre-line',
-                      }}>
-                        {svc.detailedDescription}
-                      </p>
+                  {/* Heading */}
+                  <h2 style={{
+                    color: 'var(--color-text-dark)',
+                    fontWeight: 800,
+                    fontSize: 'clamp(1.9rem, 3.2vw, 2.6rem)',
+                    letterSpacing: '-0.03em',
+                    margin: '0 0 18px 0',
+                    lineHeight: 1.2,
+                  }}>
+                    {svc.title}
+                  </h2>
 
-                      {/* Highlights */}
-                      {svc.highlights && svc.highlights.length > 0 && (
-                        <div style={{
-                          display: 'grid',
-                          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                          gap: '10px 16px',
-                          marginBottom: '28px',
-                        }}>
-                          {svc.highlights.map((h, i) => (
-                            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                              <CheckCircle2 size={18} color="var(--color-primary)" style={{ flexShrink: 0 }} />
-                              <span style={{ fontSize: '0.92rem', color: '#334155', fontWeight: 600 }}>
-                                {h}
-                              </span>
-                            </div>
-                          ))}
+                  {/* Detailed Description */}
+                  <p style={{
+                    color: 'var(--color-gray-600)',
+                    fontSize: '1.05rem',
+                    lineHeight: 1.8,
+                    margin: '0 0 28px 0',
+                    whiteSpace: 'pre-line',
+                    maxWidth: '860px',
+                  }}>
+                    {svc.detailedDescription}
+                  </p>
+
+                  {/* Highlights Grid with light background badge card */}
+                  {svc.highlights && svc.highlights.length > 0 && (
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                      gap: '12px 20px',
+                      marginBottom: '32px',
+                      padding: '24px 28px',
+                      background: isEven ? '#f8fafc' : '#ffffff',
+                      borderRadius: '16px',
+                      border: '1px solid #e2e8f0',
+                      boxShadow: '0 2px 10px rgba(15, 23, 42, 0.03)',
+                    }}>
+                      {svc.highlights.map((h, i) => (
+                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                          <CheckCircle2 size={18} color="var(--color-primary)" style={{ flexShrink: 0 }} />
+                          <span style={{ fontSize: '0.94rem', color: '#334155', fontWeight: 600 }}>
+                            {h}
+                          </span>
                         </div>
-                      )}
+                      ))}
+                    </div>
+                  )}
 
-                      {/* Action Button */}
-                      <Link
-                        to="/offert"
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '10px',
-                          background: 'var(--color-primary)',
-                          color: '#ffffff',
-                          fontWeight: 700,
-                          fontSize: '0.95rem',
-                          padding: '14px 28px',
-                          borderRadius: 'var(--border-radius-pill)',
-                          textDecoration: 'none',
-                          boxShadow: '0 4px 14px rgba(234, 88, 12, 0.35)',
-                          transition: 'all 0.25s ease',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = 'var(--color-primary-hover)';
-                          e.currentTarget.style.transform = 'translateY(-2px)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = 'var(--color-primary)';
-                          e.currentTarget.style.transform = 'translateY(0)';
-                        }}
-                      >
-                        Begär offert för {svc.title} <ArrowRight size={16} />
-                      </Link>
-                    </ScrollReveal>
-                  </div>
-
-                </div>
+                  {/* Action Button */}
+                  <Link
+                    to="/offert"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      background: 'var(--color-primary)',
+                      color: '#ffffff',
+                      fontWeight: 700,
+                      fontSize: '0.95rem',
+                      padding: '14px 28px',
+                      borderRadius: 'var(--border-radius-pill)',
+                      textDecoration: 'none',
+                      boxShadow: '0 4px 14px rgba(234, 88, 12, 0.35)',
+                      transition: 'all 0.25s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--color-primary-hover)';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'var(--color-primary)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}
+                  >
+                    Begär offert för {svc.title} <ArrowRight size={16} />
+                  </Link>
+                </ScrollReveal>
               </div>
             </section>
           );

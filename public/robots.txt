@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tengenebyggservice.se/sitemap.xml
+Sitemap: https://ht-golv-demo.vercel.app/sitemap.xml

@@ -21,12 +21,12 @@ const faqItems = [
     answer: 'Vi återkopplar vanligtvis inom 24 timmar och lämnar en tydlig, specificerad offert inom 1–3 arbetsdagar efter genomgång eller platsbesök.',
   },
   {
-    question: 'Vilka områden i Skaraborg är ert huvudsakliga upptagningsområde?',
-    answer: 'Vi har vår bas i Grästorp och utför uppdrag i Grästorp, Trollhättan, Lidköping, Vara och över hela Skaraborgsområdet.',
+    question: 'Vilka områden är ert huvudsakliga upptagningsområde?',
+    answer: 'Vi har vår bas i Stenungsund och utför uppdrag i Stenungsund, Tjörn, Orust, Kungälv och över hela Bohuslän.',
   },
   {
     question: 'Kan jag boka ett kostnadsfritt platsbesök?',
-    answer: 'Självklart! Kontakta oss via formuläret eller ring Andreas på 070-615 91 73 så bokar vi in en tid som passar dig.',
+    answer: 'Självklart! Kontakta oss via formuläret eller ring oss på 0761-65 30 60 så bokar vi in en tid som passar dig.',
   },
 ];
 
@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) 
 
 export default function Contact() {
   usePageTitle(
-    'Kontakta Tengene Byggservice AB | Grästorp & Skaraborg',
-    'Kontakta Andreas Andersson på Tengene Byggservice AB i Grästorp. Vi utför allt inom nybyggnation, tillbyggnad, renovering, tak och altan i Grästorp och hela Skaraborg. Ring 070-615 91 73.'
+    'Kontakta HT Golv i Stenungsund AB | Stenungsund & Bohuslän',
+    'Kontakta HT Golv i Stenungsund AB. Vi utför golvläggning, mattläggning, golvslipning och fastighetsförvaltning i Stenungsund och Bohuslän. Ring 0761-65 30 60.'
   );
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -124,7 +124,7 @@ export default function Contact() {
                 Så når du oss
               </h2>
               <p style={{ color: 'var(--color-gray-600)', fontSize: '1rem', lineHeight: 1.8, margin: 0 }}>
-                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller nybyggnation, tillbyggnad, renovering, takbyte eller altan hjälper vi dig gärna.
+                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller golvläggning, mattläggning, dammfri golvslipning eller fastighetsförvaltning hjälper vi dig gärna.
               </p>
 
               <div style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -147,12 +147,12 @@ export default function Contact() {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       <a
-                        href="tel:0706159173"
+                        href="tel:0761653060"
                         style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                       >
-                        070-615 91 73
+                        0761-65 30 60
                       </a>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                       Plats & Område
                     </p>
                     <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                      Bas i Grästorp • Trollhättan, Lidköping, Vara & hela Skaraborg
+                      Bas i Stenungsund • Tjörn, Orust, Kungälv & hela Bohuslän
                     </p>
                   </div>
                 </div>
@@ -199,12 +199,12 @@ export default function Contact() {
                       E-post
                     </p>
                     <a
-                      href="mailto:tengenebyggfaktura@gmail.com"
+                      href="mailto:tim@htgolv.se"
                       style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                       onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                       onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                     >
-                      tengenebyggfaktura@gmail.com
+                      tim@htgolv.se
                     </a>
                   </div>
                 </div>

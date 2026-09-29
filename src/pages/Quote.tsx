@@ -53,8 +53,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | 
 
 export default function Quote() {
   usePageTitle(
-    'Begär offert | Tengene Byggservice AB',
-    'Beskriv ditt projekt och begär en kostnadsfri offert för nybyggnation, tillbyggnad, renovering, tak eller altan i Grästorp och Skaraborg.'
+    'Begär offert | HT Golv i Stenungsund AB',
+    'Beskriv ditt projekt och begär en kostnadsfri offert för golvläggning, mattläggning, golvslipning eller fastighetsförvaltning i Stenungsund och Bohuslän.'
   );
   const [name, setName]       = useState('');
   const [email, setEmail]     = useState('');
@@ -68,15 +68,34 @@ export default function Quote() {
       {/* ── SECTION A: HERO ───────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(/hero-main.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         paddingTop: '140px',
         paddingBottom: '60px',
         textAlign: 'center',
+        overflow: 'hidden',
       }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.75)' }} />
-        <div style={{ ...container, position: 'relative', zIndex: 1 }}>
+        {/* Background Video */}
+        <video
+          src="/cta-background-video.mp4"
+          preload="auto"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        >
+          <source src="/cta-background-video.mp4" type="video/mp4" />
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260929_045335_f027d5e8-5d04-4a73-af89-b504e173516e.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.78)', zIndex: 1 }} />
+        <div style={{ ...container, position: 'relative', zIndex: 2 }}>
           <div>
             <ScrollReveal animation="blur-in">
               <h1 style={{
@@ -189,11 +208,11 @@ export default function Quote() {
                     onBlur={blurInput}
                   >
                     <option value="">Välj tjänst...</option>
-                    <option value="nybyggnation">Nybyggnation</option>
-                    <option value="renovering">Renovering</option>
-                    <option value="tillbyggnad">Tillbyggnad</option>
-                    <option value="totalentreprenad">Totalentreprenad</option>
-                    <option value="annat">Annat projekt</option>
+                    <option value="golvlaggning">Golvläggning & Parkett</option>
+                    <option value="mattlaggning">Mattläggning & Våtrum</option>
+                    <option value="golvslipning">Golvslipning & Behandling</option>
+                    <option value="fastighetsforvaltning">Fastighetsförvaltning</option>
+                    <option value="annat">Annat golvprojekt</option>
                   </select>
 
 

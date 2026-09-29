@@ -144,8 +144,8 @@ export default function Navbar() {
           right: 0,
           zIndex: 1000,
           padding: scrolled
-            ? '12px clamp(20px, 4vw, 40px)'
-            : '24px clamp(20px, 4vw, 40px)',
+            ? '10px clamp(20px, 4vw, 40px)'
+            : '18px clamp(20px, 4vw, 40px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -329,7 +329,7 @@ export default function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
           <div className="phone-link-wrapper" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '12px' }}>
             <a
-              href="tel:0706159173"
+              href="tel:0761653060"
               className="phone-link"
               style={{
                 display: 'flex',
@@ -347,7 +347,7 @@ export default function Navbar() {
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-white)')}
             >
               <Phone size={14} color="var(--color-primary)" />
-              <span>070-615 91 73</span>
+              <span>0761-65 30 60</span>
             </a>
           </div>
 
@@ -388,7 +388,7 @@ export default function Navbar() {
           {/* Phone icon — shown on mobile only */}
           <div className="mobile-phone-btn" style={{ position: 'relative', display: 'none' }}>
             <a
-              href="tel:0706159173"
+              href="tel:0761653060"
               aria-label="Ring oss"
               style={{
                 display: 'flex',
@@ -541,8 +541,8 @@ export default function Navbar() {
             Ring oss direkt:
           </span>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-            <a href="tel:0706159173" style={{ color: 'var(--color-white)', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <Phone size={14} color="var(--color-primary)" /> 070-615 91 73
+            <a href="tel:0761653060" style={{ color: 'var(--color-white)', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Phone size={14} color="var(--color-primary)" /> 0761-65 30 60
             </a>
           </div>
         </div>
@@ -558,8 +558,8 @@ export default function Navbar() {
           height: 15px;
         }
         .nav-logo {
-          height: 88px;
-          max-height: 14vh;
+          height: 112px;
+          max-height: 16vh;
           width: auto;
           display: block;
           object-fit: contain;
@@ -571,7 +571,7 @@ export default function Navbar() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-logo.scrolled {
-          height: 68px;
+          height: 80px;
           background-color: transparent;
           padding: 0;
           border-radius: 0;
@@ -584,15 +584,15 @@ export default function Navbar() {
           .nav-pill { display: none !important; }
           .hamburger { display: flex !important; }
           .offert-btn { display: none !important; }
-          nav.navbar-el { padding: 14px 20px !important; }
-          nav.navbar-el.scrolled { padding: 10px 20px !important; }
+          nav.navbar-el { padding: 12px 20px !important; }
+          nav.navbar-el.scrolled { padding: 8px 20px !important; }
           .mobile-phone-btn { display: flex !important; align-items: center; }
           .nav-logo {
-            height: 62px;
+            height: 74px;
             padding: 0;
           }
           .nav-logo.scrolled {
-            height: 50px;
+            height: 60px;
             padding: 0;
           }
         }

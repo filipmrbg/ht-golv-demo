@@ -3,14 +3,14 @@ import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import images from '../data/images';
 
 const serviceLinks = [
-  { label: 'Nybyggnation', href: '/tjanster#nybyggnation' },
-  { label: 'Renovering', href: '/tjanster#renovering' },
-  { label: 'Tillbyggnad', href: '/tjanster#tillbyggnad' },
-  { label: 'Totalentreprenad', href: '/tjanster#totalentreprenad' },
+  { label: 'Golvläggning', href: '/tjanster#golvlaggning' },
+  { label: 'Mattläggning', href: '/tjanster#mattlaggning' },
+  { label: 'Golvslipning', href: '/tjanster#golvslipning' },
+  { label: 'Fastighetsförvaltning', href: '/tjanster#fastighetsforvaltning' },
 ];
 
 const socialIcons = [
-  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/tengenebyggserviceab' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/htgolv/' },
 ];
 
 export default function Footer() {
@@ -56,7 +56,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              Tengene Byggservice AB drivs av Andreas Andersson. Vi utför professionella byggtjänster, renovering, tillbyggnad och totalentreprenad i Grästorp och Skaraborg.
+              HT Golv i Stenungsund AB är ett familjeföretag i 3 generationer. Vi utför professionell golvläggning, mattläggning, parkett och fastighetsförvaltning i Stenungsund med omnejd.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {socialIcons.map(({ Icon, label, href }) => (
@@ -129,23 +129,23 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.95rem' }}>
 
               <a
-                href="mailto:tengenebyggfaktura@gmail.com"
+                href="mailto:tim@htgolv.se"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Mail size={16} strokeWidth={2} />
                 </div>
-                <span>tengenebyggfaktura@gmail.com</span>
+                <span>tim@htgolv.se</span>
               </a>
 
               <a
-                href="tel:0706159173"
+                href="tel:0761653060"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Phone size={16} strokeWidth={2} />
                 </div>
-                <span>070-615 91 73</span>
+                <span>0761-65 30 60</span>
               </a>
 
               <div
@@ -154,7 +154,7 @@ export default function Footer() {
                 <div className="footer-contact-icon">
                   <MapPin size={16} strokeWidth={2} />
                 </div>
-                <span>Grästorp • Trollhättan • Lidköping • Vara • Skaraborg</span>
+                <span>Stenungsund • Tjörn • Orust • Kungälv • Bohuslän</span>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function Footer() {
           }}
         >
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
-            <span>© 2026 - Tengene Byggservice AB</span>
+            <span>© 2026 - HT Golv i Stenungsund AB</span>
           </div>
         </div>
       </div>

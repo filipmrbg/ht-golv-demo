@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import Button from './Button';
 
@@ -11,6 +11,11 @@ interface ReferenceItem {
   image: string;
   alt: string;
 }
+
+const isVideoUrl = (url?: string) => {
+  if (!url) return false;
+  return /\.(mp4|webm|mov|ogg)($|\?)/i.test(url);
+};
 
 const references: ReferenceItem[] = images.gallery.map((g, i) => ({
   id: String(i + 1),
@@ -117,13 +122,13 @@ export default function ProjectsGallery() {
                   margin: 0,
                 }}
               >
-                Ett urval av våra utförda byggprojekt och renoveringar. Klicka på valfri bild för fullskärmsvy.
+                Ett urval av våra utförda golvläggningar, mattläggningar och renoveringar. Klicka på valfri video eller bild för fullskärmsvy.
               </p>
             </ScrollReveal>
           </div>
         </div>
 
-        {/* 6-Image Dynamic Ratio Collage Grid */}
+        {/* 4-Item Dynamic Ratio Collage Grid */}
         <div
           className="collage-grid"
           onMouseLeave={() => setHoveredIndex(null)}
@@ -131,6 +136,7 @@ export default function ProjectsGallery() {
           {references.map((item, idx) => {
             const isHovered = hoveredIndex === idx;
             const isAnyHovered = hoveredIndex !== null;
+            const isVideo = isVideoUrl(item.image);
 
             return (
               <div
@@ -140,14 +146,41 @@ export default function ProjectsGallery() {
                 onMouseEnter={() => setHoveredIndex(idx)}
                 role="button"
                 tabIndex={0}
-                aria-label={`Visa referensbild ${idx + 1}`}
+                aria-label={`Visa referens ${idx + 1}`}
               >
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="collage-card-img"
-                />
+                {isVideo ? (
+                  <>
+                    <video
+                      ref={(el) => {
+                        if (el) {
+                          el.muted = true;
+                          el.defaultMuted = true;
+                          el.playsInline = true;
+                          el.play().catch(() => {});
+                        }
+                      }}
+                      src={item.image}
+                      poster={item.image.replace(/\.mp4$/, '.jpg')}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      className="collage-card-img"
+                    />
+                    <div className="collage-video-badge">
+                      <Play size={11} fill="currentColor" />
+                      <span>Video</span>
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="collage-card-img"
+                  />
+                )}
               </div>
             );
           })}
@@ -202,16 +235,30 @@ export default function ProjectsGallery() {
             <ChevronRight size={30} />
           </button>
 
-          {/* Modal Image Wrapper */}
+          {/* Modal Media Wrapper */}
           <div
             className="ref-modal-dialog"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={references[lightboxIndex].image}
-              alt={references[lightboxIndex].alt}
-              className="ref-modal-img"
-            />
+            {isVideoUrl(references[lightboxIndex].image) ? (
+              <video
+                key={references[lightboxIndex].image}
+                src={references[lightboxIndex].image}
+                autoPlay
+                loop
+                controls
+                playsInline
+                className="ref-modal-img"
+                style={{ background: '#000' }}
+              />
+            ) : (
+              <img
+                key={references[lightboxIndex].image}
+                src={references[lightboxIndex].image}
+                alt={references[lightboxIndex].alt}
+                className="ref-modal-img"
+              />
+            )}
             <div className="ref-modal-counter">
               {lightboxIndex + 1} / {total}
             </div>
@@ -221,11 +268,11 @@ export default function ProjectsGallery() {
       )}
 
       <style>{`
-        /* Desktop Dynamic Ratio 2-Row Collage */
+        /* Desktop Dynamic Ratio 2-Row Collage for 4 items */
         .collage-grid {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
-          grid-auto-rows: 250px;
+          grid-auto-rows: 270px;
           gap: 20px;
         }
 
@@ -240,30 +287,22 @@ export default function ProjectsGallery() {
           box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
         }
 
-        /* Row 1: 5 cols (Wide) + 4 cols (Med) + 3 cols (Compact) */
+        /* Row 1: 7 cols (Wide) + 5 cols (Med) */
         .collage-item-1 {
-          grid-column: span 5;
+          grid-column: span 7;
         }
 
         .collage-item-2 {
-          grid-column: span 4;
-        }
-
-        .collage-item-3 {
-          grid-column: span 3;
-        }
-
-        /* Row 2: 3 cols (Compact) + 4 cols (Med) + 5 cols (Wide) */
-        .collage-item-4 {
-          grid-column: span 3;
-        }
-
-        .collage-item-5 {
-          grid-column: span 4;
-        }
-
-        .collage-item-6 {
           grid-column: span 5;
+        }
+
+        /* Row 2: 5 cols (Med) + 7 cols (Wide) */
+        .collage-item-3 {
+          grid-column: span 5;
+        }
+
+        .collage-item-4 {
+          grid-column: span 7;
         }
 
         .collage-card-img {
@@ -284,6 +323,35 @@ export default function ProjectsGallery() {
 
         .collage-item.hovered .collage-card-img {
           transform: scale(1.035);
+        }
+
+        .collage-video-badge {
+          position: absolute;
+          top: 14px;
+          right: 14px;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          background: rgba(15, 23, 42, 0.75);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          color: #ffffff;
+          padding: 4px 10px;
+          border-radius: 9999px;
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          pointer-events: none;
+          z-index: 3;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .collage-item.hovered .collage-video-badge {
+          background: rgba(234, 88, 12, 0.95);
+          border-color: rgba(255, 255, 255, 0.4);
+          transform: scale(1.05);
         }
 
         .collage-item.dimmed {

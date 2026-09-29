@@ -10,31 +10,10 @@ const container: React.CSSProperties = {
   padding: '0 clamp(20px, 5vw, 40px)',
 };
 
-const teamMembers = [
-  {
-    role: 'Ägare & VD / Byggmästare',
-    name: 'Andreas Andersson',
-    initials: 'A',
-    description: 'Leder Tengene Byggservice AB med gedigen erfarenhet, hög yrkesstolthet och ett kompromisslöst fokus på noggrannhet och kvalitet.',
-  },
-  {
-    role: 'Yrkeshantverkare & Snickare',
-    name: 'Johan S.',
-    initials: 'J',
-    description: 'Mångårig erfarenhet inom nybyggnation, stomresning, köksrenovering och finsnickeri.',
-  },
-  {
-    role: 'Yrkeshantverkare & Montör',
-    name: 'Erik B.',
-    initials: 'E',
-    description: 'Specialist på altanbyggen, fönsterbyten, tak och fasad med öga för detaljer och precision.',
-  },
-];
-
 export default function About() {
   usePageTitle(
-    'Om Tengene Byggservice AB | Byggfirma i Grästorp & Skaraborg',
-    'Läs om Tengene Byggservice AB. Andreas Andersson och teamet utför allt inom byggnation, renovering, tillbyggnad, tak och altan i Grästorp och hela Skaraborg.'
+    'Om HT Golv i Stenungsund AB | Golvfirma i Stenungsund & Bohuslän',
+    'Läs om HT Golv i Stenungsund AB – ett familjeföretag i 3 generationer specialiserat på golvläggning, mattläggning, golvslipning och fastighetsförvaltning i Stenungsund med omnejd.'
   );
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -61,12 +40,12 @@ export default function About() {
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
               }}>
-                Om Tengene Byggservice AB
+                Om HT Golv i Stenungsund AB
               </h1>
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.08rem', margin: '0 auto', maxWidth: '640px', lineHeight: 1.6 }}>
-                Professionellt byggföretag med bas i Grästorp – vi förverkligar dina byggdrömmar med hantverkskvalitet, personlig service och trygghet genom hela projektet.
+                Familjeföretag i 3 generationer med bas i Stenungsund – vi levererar högsta kvalitet inom golvläggning, mattläggning, golvslipning och fastighetsförvaltning med personlig service.
               </p>
             </ScrollReveal>
           </div>
@@ -93,7 +72,7 @@ export default function About() {
               }}>
                 <img
                   src={images.about.hero.url || images.logoDark?.url || '/logo-dark.png'}
-                  alt="Tengene Byggservice AB"
+                  alt="HT Golv i Stenungsund AB"
                   loading="eager"
                   decoding="async"
                   style={{
@@ -122,7 +101,7 @@ export default function About() {
                   letterSpacing: '-0.03em',
                   margin: '0 0 20px 0',
                 }}>
-                  Gediget hantverk, trygghet och kvalitet i varje detalj
+                  Gediget hantverk, trygghet och kvalitet i tre generationer
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="fade-up" delay={100}>
@@ -134,11 +113,11 @@ export default function About() {
                     margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
-                    Tengene Byggservice AB drivs av Andreas Andersson och erbjuder ett komplett utbud av byggtjänster inom nybyggnation, tillbyggnad, renovering, tak, fasad och altan. Med bas i Grästorp är vi verksamma i Trollhättan, Lidköping, Vara och över hela Skaraborg för både privatpersoner och företag.
+                    HT Golv i Stenungsund AB drivs av Tim och är ett etablerat familjeföretag i tredje generationen. Vi erbjuder ett komplett utbud av tjänster inom professionell golvläggning, mattläggning, trägolv och parkett, dammfri golvslipning samt noggrann fastighetsförvaltning. Med bas i Stenungsund är vi verksamma på Tjörn, Orust, i Kungälv och över hela Bohuslän för både privatpersoner, bostadsrättsföreningar och företag.
                   </p>
                   
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
-                    Trygg byggprocess från första idé till färdigställande
+                    Trygg golvprocess från rådgivning till färdigt resultat
                   </h3>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -146,7 +125,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 16px 0',
                   }}>
-                    Hos oss får du en pålitlig och engagerad partner oavsett om det handlar om en altan, ett takbyte eller en omfattande tillbyggnad. Vi arbetar med noggrann planering, tydliga offerter och öppen dialog genom hela byggprocessen så att du alltid känner dig trygg.
+                    Hos oss möts du av mångårig yrkeskunskap och ett genuint intresse för varje detalj, oavsett om det handlar om att lägga ett slitstarkt våtrumsgolv, renovera ett vackert parkettgolv eller sköta den löpande förvaltningen av en fastighet. Vi arbetar med noggrann planering, fasta priser och öppen dialog så att du alltid känner dig trygg.
                   </p>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -154,7 +133,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 24px 0',
                   }}>
-                    När du anlitar Tengene Byggservice AB får du en direkt kontaktperson i Andreas Andersson. Vi sätter stor ära i att hålla utlovade tidsramar, leverera högsta finish och lämna en ren och snygg arbetsplats efter oss.
+                    När du anlitar HT Golv i Stenungsund AB får du en direkt kontaktperson i Tim. Vi sätter stor ära i att hålla utlovade tidsramar, leverera högsta finish och lämna en ren och snygg arbetsplats efter oss.
                   </p>
 
                   {/* Founder Quote Card */}
@@ -173,7 +152,7 @@ export default function About() {
                       lineHeight: 1.7,
                       margin: '0 0 10px 0',
                     }}>
-                      "Vi utför alla bygg- och renoveringsprojekt med största yrkesstolthet. Med personlig service, tydliga tidsramar och gediget hantverk ser vi till att dina idéer blir verklighet precis som du önskat."
+                      "Vi utför alla golv- och förvaltningsprojekt med största yrkesstolthet. Som familjeföretag i tredje generationen värnar vi om personlig service, tydliga tidsramar och kompromisslös hantverkskvalitet."
                     </p>
                     <span style={{
                       color: 'var(--color-primary)',
@@ -181,12 +160,12 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      Andreas Andersson, Grundare & Ägare för Tengene Byggservice AB
+                      Tim, VD & Verksamhetsansvarig för HT Golv i Stenungsund AB
                     </span>
                   </div>
 
                   <Button variant="primary" size="lg" href="/kontakt">
-                    Kontakta Andreas för rådgivning
+                    Kontakta oss för rådgivning
                   </Button>
                 </div>
               </ScrollReveal>
@@ -196,121 +175,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── SECTION D: TEAM PROFILES (3 PERSONS) ──────────────────────────── */}
-      <section style={{ background: '#ffffff', padding: '90px 0', borderTop: '1px solid #e2e8f0' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 40px)' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <ScrollReveal animation="blur-in">
-              <h2 style={{
-                color: 'var(--color-text-dark)',
-                fontWeight: 800,
-                fontSize: 'clamp(2rem, 3.4vw, 2.6rem)',
-                letterSpacing: '-0.03em',
-                margin: '0 0 12px 0',
-              }}>
-                Möt vårt team
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fade-up" delay={100}>
-              <p style={{
-                color: 'var(--color-gray-600)',
-                fontSize: '1rem',
-                lineHeight: 1.7,
-                maxWidth: '580px',
-                margin: '0 auto',
-              }}>
-                Erfarna och engagerade hantverkare som levererar kvalitet och noggrannhet i Grästorp och hela Skaraborg.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '28px',
-          }} className="team-grid">
-            {teamMembers.map((member, i) => (
-              <ScrollReveal key={i} animation="slide-up-fade" delay={i * 120}>
-                <div style={{
-                  background: '#f8fafc',
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
-                  textAlign: 'center',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px)';
-                  e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.09)';
-                  e.currentTarget.style.borderColor = 'rgba(234, 88, 12, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.04)';
-                  e.currentTarget.style.borderColor = '#e2e8f0';
-                }}
-                >
-                  <div style={{ padding: '36px 28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{
-                      width: '68px',
-                      height: '68px',
-                      borderRadius: '50%',
-                      background: i === 0 ? 'rgba(234, 88, 12, 0.12)' : 'rgba(15, 23, 42, 0.08)',
-                      color: i === 0 ? 'var(--color-primary)' : 'var(--color-text-dark)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '1.7rem',
-                      fontWeight: 800,
-                      margin: '0 auto 18px auto',
-                      border: i === 0 ? '2px solid rgba(234, 88, 12, 0.3)' : '2px solid rgba(15, 23, 42, 0.1)',
-                    }}>
-                      {member.initials}
-                    </div>
-                    <h3 style={{
-                      color: 'var(--color-text-dark)',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      margin: '0 0 6px 0',
-                    }}>
-                      {member.name}
-                    </h3>
-                    <p style={{
-                      color: 'var(--color-primary)',
-                      fontSize: '0.9rem',
-                      fontWeight: 700,
-                      margin: '0 0 14px 0',
-                      lineHeight: 1.4,
-                    }}>
-                      {member.role}
-                    </p>
-                    <p style={{
-                      color: 'var(--color-gray-600)',
-                      fontSize: '0.88rem',
-                      lineHeight: 1.6,
-                      margin: 0,
-                    }}>
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION E: CTA BANNER ─────────────────────────────── */}
+      {/* ── SECTION C: CTA BANNER ─────────────────────────────── */}
       <CTABanner />
 
       <style>{`
         @media (max-width: 768px) {
           .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .team-grid { grid-template-columns: 1fr !important; }
           .about-content-grid {
             grid-template-columns: 1fr !important;
             gap: 32px !important;
@@ -319,9 +189,6 @@ export default function About() {
             display: flex;
             justifyContent: center;
           }
-        }
-        @media (max-width: 1024px) {
-          .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
     </main>
